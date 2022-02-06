@@ -18,7 +18,10 @@ nano "textfile name" : Read/write what's in the textfile
 
 - - - - - - - - - - - - - - - - - 
 
-asdfasdfasdf
+
+
+
+
 
 
 - - - - - Checking/Switching Branches - - - - - 
