@@ -20,6 +20,9 @@ nano "textfile name" : Read/write what's in the textfile
 
 
 
+Testing
+
+
 - - - - - Checking/Switching Branches - - - - - 
 
 git branch : To checkout what branches are there in the repo
@@ -30,7 +33,7 @@ git checkout -b <new_branch> : To create a new branch
 
 - - - - - - - - - - - - - - - - - - - - - - - -
 
-Hallo
+
 
 - - - - - - - - - - - Steps to pushing - - - - - - - - - - - 
 
