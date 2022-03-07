@@ -1,6 +1,6 @@
 Game Description
 
-You can find the Code: Capstone -> Asset -> Scripts. Any file that has the '.cs' are files containing codes
+You can find the Code: Capstone -> Asset -> Scripts. Any file that has the '.cs' are files containing codes.
 You can find the Video: Milestone 2
 
 For our Senior Capstone Project we decided to develop a top-down view, 2-D game based off the popular anime "Goblin Slayer" using C# on VisualStudios.
