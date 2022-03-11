@@ -14,3 +14,7 @@ Current Progress
 
 As of right now we have a variety of sprites created for the game. 
 As for our code, so far we have been able to incorprate movement for our main player. 
+Added a border to the game so the sprites are not all over the place and roaming freely.
+Enemy sprites now move and chase the player sprite. 
+Added attack animation. 
+Added unit collision. 
