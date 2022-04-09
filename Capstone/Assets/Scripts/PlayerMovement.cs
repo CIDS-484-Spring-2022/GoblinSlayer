@@ -27,10 +27,10 @@ public class PlayerMovement : MonoBehaviour
             GetComponent<Transform>().eulerAngles = new Vector3 (0, 0, 90);
         }
         if (Input.GetKey(KeyCode.W)){
-            GetComponent<Transform>().eulerAngles = new Vector3 (0, 0, 180);
+            GetComponent<Transform>().eulerAngles = new Vector3 (0, 0, -180);
         }
         if (Input.GetKey(KeyCode.S)){
-            GetComponent<Transform>().eulerAngles = new Vector3 (0, 0, 0);
+            GetComponent<Transform>().eulerAngles = new Vector3 (0, 0, 180);
         }
         */
 
@@ -52,12 +52,12 @@ public class PlayerMovement : MonoBehaviour
         //Character flips on y-axis
         if(Input.GetAxis("Vertical") < 0 ){
             characterScale.y = 3;
-            //GetComponent<Transform>().eulerAngles = new Vector3 (0, 0, 180);
+            //GetComponent<Transform>().eulerAngles = new Vector3 (0, 0, -180);
         }
         
         if(Input.GetAxis("Vertical") > 0 ){
             characterScale.y = -3;
-            //GetComponent<Transform>().eulerAngles = new Vector3 (0, 0, 0);
+            //GetComponent<Transform>().eulerAngles = new Vector3 (0, 0, 180);
         }
         
         transform.localScale = characterScale;
