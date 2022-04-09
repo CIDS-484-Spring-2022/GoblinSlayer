@@ -4,31 +4,53 @@ using UnityEngine;
 
 public class EnemyChase : MonoBehaviour
 {
-    public Transform player;
-    private Rigidbody2D rb;
-    public float moveSpeed = 5f;
-    Vector2 movement;
+    public float speed = 3f;
+    private Transform target;
+    /*
+    [SerializeField] private float collideDamage = 5f;
+    [SerializeField] private float collideSpeed = .01f;
+
+    private float collide;
+    */
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if(other.gameObject.tag == "Slayer"){
+            target = other.transform;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other) {
+        if(other.gameObject.tag == "Slayer"){
+            target = null;
+        }
+    }
+
+    // Start is called before the first frame update
     void Start()
     {
-        rb = this.GetComponent<Rigidbody2D>();
+        
     }
-
+/*
+    private void OnCollisionStay2D(Collision2D other) {
+        if (other.gameObject.tag == "Player"){
+            if(collideSpeed <= collide){
+                other.gameObject.GetComponent<PlayerHealth>().UpdateHealth(-collideDamage);
+                collide = 0f;
+            }else{
+                 collide += Time.deltaTime;
+            }
+            
+        }
+    }
+ */   
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
+        if(target != null){
+            float step = speed * Time.deltaTime;
+            transform.position = Vector2.MoveTowards(transform.position, target.position, step);
+        }
+        
 
-        Vector3 direction = player.position - transform.position;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        rb.rotation = angle;
-        direction.Normalize();
-        movement = direction;
-    }
-    void FixedUpdate()
-    {
-        moveCharacter(movement);
-    }
-    void moveCharacter(Vector2 direction)
-    {
-        rb.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));
     }
 }
