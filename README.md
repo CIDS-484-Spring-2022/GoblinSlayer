@@ -18,3 +18,8 @@ Added a border to the game so the sprites are not all over the place and roaming
 Enemy sprites now move and chase the player sprite. 
 Added attack animation. 
 Added unit collision. 
+Enemy now does damage.
+We now have a health bar.
+Added enemy attack animation.
+Got our hero sprite to flip directions when he is moving.
+The sword now collides with the enemy. 
