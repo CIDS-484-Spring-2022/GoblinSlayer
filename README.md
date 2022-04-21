@@ -23,3 +23,4 @@ We now have a health bar.
 Added enemy attack animation.
 Got our hero sprite to flip directions when he is moving.
 The sword now collides with the enemy. 
+Our enemy sprite attacks now flip, they swing on both side of the enemy.
