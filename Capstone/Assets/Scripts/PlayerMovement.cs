@@ -4,12 +4,9 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    
+    public Animator animator;
     [SerializeField] float moveSpeed = 7f;
-    void Start()
-    {
-        
-    }
+
     // Update is called once per frame
     void Update()
     {
@@ -35,34 +32,45 @@ public class PlayerMovement : MonoBehaviour
         */
 
         // Character flips on x-axis
-        if(Input.GetAxis("Horizontal") < 0 ){
+        if (Input.GetAxis("Horizontal") < 0)
+        {
             /*
             Transform transform = GetComponent<Transform>();
             transform.Rotate( new Vector3(0, 0, 90));
             */
             //GetComponent<Transform>().eulerAngles = new Vector3 (0, 0, -90);
             characterScale.x = -3;
-            
+
         }
-        if(Input.GetAxis("Horizontal") > 0 ){
+        if (Input.GetAxis("Horizontal") > 0)
+        {
             characterScale.x = 3;
             //GetComponent<Transform>().eulerAngles = new Vector3 (0, 0, 90);
         }
-        
+
         //Character flips on y-axis
-        if(Input.GetAxis("Vertical") < 0 ){
+        if (Input.GetAxis("Vertical") < 0)
+        {
             characterScale.y = 3;
             //GetComponent<Transform>().eulerAngles = new Vector3 (0, 0, -180);
         }
-        
-        if(Input.GetAxis("Vertical") > 0 ){
+
+        if (Input.GetAxis("Vertical") > 0)
+        {
             characterScale.y = -3;
             //GetComponent<Transform>().eulerAngles = new Vector3 (0, 0, 180);
         }
-        
+
         transform.localScale = characterScale;
-        
+
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            Attack();
+        }
 
     }
-
+    void Attack()
+    {
+        animator.SetTrigger("Attack");
+    }
 }
