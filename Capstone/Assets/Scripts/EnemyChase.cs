@@ -53,9 +53,9 @@ public class EnemyChase : MonoBehaviour
             float step = speed * Time.deltaTime;
             transform.position = Vector2.MoveTowards(transform.position, target.position, step);
         }
-        if (target.transform.position.x < gameObject.transform.position.x && facingRight)
+        if (target.transform.position.y < gameObject.transform.position.y && !facingRight)
             Flip();
-        if (target.transform.position.x > gameObject.transform.position.x && !facingRight)
+        if (target.transform.position.y > gameObject.transform.position.y && facingRight)
             Flip();
 
     }
@@ -64,7 +64,7 @@ public class EnemyChase : MonoBehaviour
         //here your flip funktion, as example
         facingRight = !facingRight;
         Vector3 tmpScale = gameObject.transform.localScale;
-        tmpScale.x *= -1;
+        tmpScale.y *= -1;
         gameObject.transform.localScale = tmpScale;
     }
 }
