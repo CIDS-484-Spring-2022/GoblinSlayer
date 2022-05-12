@@ -13,7 +13,7 @@ public class EnemyAnimatorTigger : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    // Update is called once per frame
+    //Starts the enemy animation  
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "SlayerBoundary")
@@ -21,6 +21,7 @@ public class EnemyAnimatorTigger : MonoBehaviour
             animate.enabled = true;
         }
     }
+    //Turns animation off when not in boundary
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.tag == "SlayerBoundary")

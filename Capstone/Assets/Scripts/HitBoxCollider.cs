@@ -16,22 +16,24 @@ public class HitBoxCollider : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Returns true or false depending on the mouse
         if(Input.GetKeyUp(KeyCode.Mouse0)){
             hitboxCollider.enabled = false;
         }
         
-
         if(Input.GetKeyDown(KeyCode.Mouse0)){
             hitboxCollider.enabled = true;
         }
     }
+    //Deals Damage
     public void DoingDamage(){
         enemy.TakeDamage(damage);
     }
-        private void OnCollisionEnter2D(Collision2D other) {
+    //When collision occurs it will trigger enemy damage
+    private void OnCollisionEnter2D(Collision2D other) {
         if(other.gameObject.tag == "Enemy"){                 
-                Debug.Log("Enemy took damage");
-                enemy.TakeDamage(damage);                                
+            Debug.Log("Enemy took damage");
+            enemy.TakeDamage(damage);                                
      }
     }
 }

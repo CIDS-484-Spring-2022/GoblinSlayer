@@ -9,7 +9,7 @@ public class EnemyChase : MonoBehaviour
     private Transform target;
     Collider2D enemyCollider;
 
-
+    //Enables collider when hit 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Slayer")
@@ -21,30 +21,13 @@ public class EnemyChase : MonoBehaviour
             enemyCollider.enabled = true;
         }
     }
-    /*
-        private void OnTriggerExit2D(Collider2D other) {
-            if(other.gameObject.tag == "Slayer"){
-                target = null;
-            }
-        }
-    */
+    
     // Start is called before the first frame update
     void Start()
     {
         enemyCollider = GetComponent<Collider2D>();
     }
-    /*
-        private void OnCollisionStay2D(Collision2D other) {
-            if (other.gameObject.tag == "Player"){
-                if(collideSpeed <= collide){
-                    other.gameObject.GetComponent<PlayerHealth>().UpdateHealth(-collideDamage);
-                    collide = 0f;
-                }else{
-                     collide += Time.deltaTime;
-                }
-            }
-        }
-     */
+    
     // Update is called once per frame
     private void Update()
     {
@@ -61,7 +44,7 @@ public class EnemyChase : MonoBehaviour
     }
     void Flip()
     {
-        //here your flip funktion, as example
+        //Flips the enemy direction
         facingRight = !facingRight;
         Vector3 tmpScale = gameObject.transform.localScale;
         tmpScale.y *= -1;
