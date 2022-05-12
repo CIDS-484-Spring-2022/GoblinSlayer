@@ -18,6 +18,9 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
+        if(currentHealth <= 0){
+            Debug.Log("Game Over");
+        }
     }
     
 }

@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 24136724}
   m_Layer: 0
   m_Name: HitBox
-  m_TagString: Untagged
+  m_TagString: HitBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -193,6 +193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db1f8c49f7a8e47439851d52fef37d9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemy: {fileID: 1684248573}
 --- !u!1 &35092446
 GameObject:
   m_ObjectHideFlags: 0
@@ -1807,7 +1808,7 @@ GameObject:
   - component: {fileID: 1684248573}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1977,7 +1978,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 716e95bc30cc6824da6a23ceae548bbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  maxHealth: 10
+  currentHeath: 0
 --- !u!114 &1684248574
 MonoBehaviour:
   m_ObjectHideFlags: 0

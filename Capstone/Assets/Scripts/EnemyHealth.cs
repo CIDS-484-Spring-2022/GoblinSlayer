@@ -4,7 +4,21 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    public int health = 10;
+    public int maxHealth = 10;
+    public int currentHeath;
     // Start is called before the first frame update
-    
+    void start()
+    {
+        currentHeath = maxHealth;
+    }
+    public void TakeDamage(int damage)
+    {
+        currentHeath -= damage;
+        if (currentHeath <= 0)
+        {
+            //Debug.Log("Dead");
+            Destroy(gameObject);
+        }
+    }
+
 }
